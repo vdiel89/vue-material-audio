@@ -1,10 +1,20 @@
 {
   "name": "vue-material-audio",
   "version": "0.1.0",
-  "private": true,
+  "main": "index.js",
+  "keywords": [
+    "audio",
+    "player",
+    "sound",
+    "mp3",
+    "md-audio",
+    "vue-material",
+    "playlist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-material-audio index.js"
   },
   "dependencies": {
     "material-design-icons": "^3.0.1",
@@ -24,5 +34,12 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
   ]
 }
