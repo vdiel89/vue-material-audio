@@ -17,6 +17,10 @@
                     <md-icon v-if="loaded === false">refresh</md-icon>
                     <md-icon v-else>get_app</md-icon>
                 </md-button>
+                <md-button class="md-icon-button md-primary" @click="showLyrics = true" v-if="this.$slots.default">
+                    <md-icon>message</md-icon>
+                    <Lyrics :show-dialog.sync="showLyrics" :title="file"><slot></slot></Lyrics>
+                </md-button>
             </div>
         </div>
         <div class="md-layout md-gutter md-alignment-top-center">
@@ -29,10 +33,12 @@
     </div>
 </template>
 <script>
+    import Lyrics from "./Lyrics.dialog";
     const formatTime = (second) => new Date(second * 1000).toISOString().substr(11, 8);
 
     export default {
         name: 'MdVueAudio',
+        components: {Lyrics},
         props: {
             file: {
                 type: String,
@@ -66,6 +72,7 @@
                 audio: undefined,
                 percentage: 0,
                 totalDuration: 0,
+                showLyrics: false
             }
         },
         methods: {

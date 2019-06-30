@@ -7,7 +7,9 @@
                         <md-tab id="tab-home" md-label="Single Player">
                             <md-vue-audio
                                     file="/audio/SampleAudio_0.4mb.mp3"
-                            ></md-vue-audio>
+                            >
+                                <i>Some lyrics</i>
+                            </md-vue-audio>
                         </md-tab>
 
                         <md-tab id="tab-pages" md-label="Playlist">
